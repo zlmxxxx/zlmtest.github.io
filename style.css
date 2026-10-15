@@ -813,6 +813,15 @@ footer a:hover {
     font-size: 0.8rem;
 }
 
+a.tag {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+a.tag:hover {
+    border-color: var(--border-strong);
+}
+
 .page-section {
     padding: 2.5rem 0;
 }
