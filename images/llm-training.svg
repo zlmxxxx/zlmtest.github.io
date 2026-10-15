@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" role="img" aria-label="大模型训练四个阶段流程图：预训练、指令微调、对齐与强化学习、部署与工具">
+  <style>
+    text { font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", system-ui, sans-serif; }
+    .bg { fill: #0d0f14; } .panel { fill: #151821; stroke: #2a2e3a; } .t { fill: #f4f4f5; } .m { fill: #a1a1aa; } .s { fill: #71717a; }
+    .ac { fill: #818cf8; } .arrow { fill: #71717a; } .track { fill: #262a35; }
+    .g1 { stop-color: #818cf8; } .g2 { stop-color: #22d3ee; }
+    @media (prefers-color-scheme: light) {
+      .bg { fill: #ffffff; } .panel { fill: #f6f6f8; stroke: #e4e4e7; } .t { fill: #18181b; } .m { fill: #52525b; } .s { fill: #71717a; }
+      .ac { fill: #4f46e5; } .arrow { fill: #a1a1aa; } .track { fill: #e4e4e7; }
+      .g1 { stop-color: #4f46e5; } .g2 { stop-color: #0891b2; }
+    }
+  </style>
+  <defs>
+    <linearGradient id="bar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" class="g1"/><stop offset="1" class="g2"/>
+    </linearGradient>
+  </defs>
+  <rect class="bg" width="800" height="300"/>
+
+  <g>
+    <rect class="panel" x="20" y="30" width="165" height="150" rx="14"/>
+    <text class="ac" x="40" y="60" font-size="13" font-weight="700">01</text>
+    <text class="t" x="40" y="86" font-size="17" font-weight="700">预训练</text>
+    <text class="m" x="40" y="112" font-size="12.5">在海量文本、代码上</text>
+    <text class="m" x="40" y="132" font-size="12.5">学习"预测下一个词"</text>
+    <text class="s" x="40" y="162" font-size="12">数据：万亿级 Token</text>
+  </g>
+  <g>
+    <rect class="panel" x="218" y="30" width="165" height="150" rx="14"/>
+    <text class="ac" x="238" y="60" font-size="13" font-weight="700">02</text>
+    <text class="t" x="238" y="86" font-size="17" font-weight="700">指令微调</text>
+    <text class="m" x="238" y="112" font-size="12.5">用问答示例教会模型</text>
+    <text class="m" x="238" y="132" font-size="12.5">听懂并执行指令</text>
+    <text class="s" x="238" y="162" font-size="12">数据：数万至数十万条</text>
+  </g>
+  <g>
+    <rect class="panel" x="416" y="30" width="165" height="150" rx="14"/>
+    <text class="ac" x="436" y="60" font-size="13" font-weight="700">03</text>
+    <text class="t" x="436" y="86" font-size="17" font-weight="700">对齐与强化学习</text>
+    <text class="m" x="436" y="112" font-size="12.5">按人类偏好或可验证</text>
+    <text class="m" x="436" y="132" font-size="12.5">结果打分，持续改进</text>
+    <text class="s" x="436" y="162" font-size="12">信号：偏好 / 奖励</text>
+  </g>
+  <g>
+    <rect class="panel" x="614" y="30" width="165" height="150" rx="14"/>
+    <text class="ac" x="634" y="60" font-size="13" font-weight="700">04</text>
+    <text class="t" x="634" y="86" font-size="17" font-weight="700">部署与工具</text>
+    <text class="m" x="634" y="112" font-size="12.5">接入搜索、代码执行</text>
+    <text class="m" x="634" y="132" font-size="12.5">与安全过滤后上线</text>
+    <text class="s" x="634" y="162" font-size="12">形态：助手 / 智能体</text>
+  </g>
+
+  <path class="arrow" d="M191 99 L211 105 L191 111 Z"/>
+  <path class="arrow" d="M389 99 L409 105 L389 111 Z"/>
+  <path class="arrow" d="M587 99 L607 105 L587 111 Z"/>
+
+  <!-- 算力消耗示意 -->
+  <text class="t" x="20" y="222" font-size="14" font-weight="600">算力消耗（示意）</text>
+  <rect class="track" x="20" y="238" width="760" height="12" rx="6"/>
+  <rect x="20" y="238" width="560" height="12" rx="6" fill="url(#bar)"/>
+  <text class="s" x="20" y="274" font-size="12">绝大部分训练算力用于预训练；后训练阶段数据更少，但决定了模型"好不好用"</text>
+</svg>

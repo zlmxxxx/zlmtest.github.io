@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 340" role="img" aria-label="人工智能七十年的起伏曲线：两次寒冬后，深度学习与大模型带来持续高涨">
+  <style>
+    text { font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", system-ui, sans-serif; }
+    .bg { fill: #0d0f14; } .t { fill: #f4f4f5; } .m { fill: #a1a1aa; } .s { fill: #71717a; } .ac { fill: #818cf8; } .ac2 { fill: #22d3ee; }
+    .band { fill: #ffffff; fill-opacity: .025; } .axis { stroke: #3a3f4d; } .line { stroke: #818cf8; } .dot { fill: #0d0f14; stroke: #818cf8; }
+    .cold { fill: #38bdf8; fill-opacity: .08; } .coldt { fill: #38bdf8; }
+    .g1 { stop-color: #818cf8; } .g0 { stop-color: #818cf8; stop-opacity: 0; }
+    @media (prefers-color-scheme: light) {
+      .bg { fill: #ffffff; } .t { fill: #18181b; } .m { fill: #52525b; } .s { fill: #71717a; } .ac { fill: #4f46e5; } .ac2 { fill: #0891b2; }
+      .band { fill: #18181b; fill-opacity: .03; } .axis { stroke: #d4d4d8; } .line { stroke: #4f46e5; } .dot { fill: #ffffff; stroke: #4f46e5; }
+      .cold { fill: #0284c7; fill-opacity: .07; } .coldt { fill: #0284c7; }
+      .g1 { stop-color: #4f46e5; } .g0 { stop-color: #4f46e5; stop-opacity: 0; }
+    }
+  </style>
+  <defs>
+    <linearGradient id="area" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" class="g1" stop-opacity=".3"/><stop offset="1" class="g0"/>
+    </linearGradient>
+  </defs>
+  <rect class="bg" width="800" height="340"/>
+
+  <!-- 阶段底色 -->
+  <rect class="band" x="190" y="20" width="140" height="265"/>
+  <rect class="band" x="470" y="20" width="140" height="265"/>
+  <rect class="cold" x="172" y="20" width="36" height="265"/>
+  <rect class="cold" x="255" y="20" width="36" height="265"/>
+
+  <text class="s" x="30" y="40" font-size="12">社会关注与投入（示意）</text>
+
+  <path d="M50 230 L85 195 L137 150 L190 250 L238 170 L273 255 L291 240 L330 215 L406 150 L457 120 L470 115 L530 95 L570 72 L610 60 L680 45 L750 32 L750 285 L50 285 Z" fill="url(#area)"/>
+  <polyline class="line" points="50,230 85,195 137,150 190,250 238,170 273,255 291,240 330,215 406,150 457,120 470,115 530,95 570,72 610,60 680,45 750,32" fill="none" stroke-width="3" stroke-linejoin="round"/>
+
+  <line class="axis" x1="50" y1="285" x2="760" y2="285" stroke-width="1.2"/>
+
+  <g stroke-width="2.5">
+    <circle class="dot" cx="85" cy="195" r="5"/>
+    <circle class="dot" cx="238" cy="170" r="5"/>
+    <circle class="dot" cx="291" cy="240" r="5"/>
+    <circle class="dot" cx="406" cy="150" r="5"/>
+    <circle class="dot" cx="457" cy="120" r="5"/>
+    <circle class="dot" cx="570" cy="72" r="5"/>
+    <circle class="dot" cx="680" cy="45" r="5"/>
+  </g>
+  <g font-size="12">
+    <text class="t" x="22" y="164" font-weight="600">1956 达特茅斯</text>
+    <text class="t" x="214" y="155" font-weight="600">专家系统</text>
+    <text class="t" x="294" y="190" font-weight="600">1997 深蓝</text>
+    <text class="t" x="352" y="140" font-weight="600">2012 AlexNet</text>
+    <text class="t" x="400" y="104" font-weight="600">2016 AlphaGo</text>
+    <text class="t" x="504" y="58" font-weight="600">2022 ChatGPT</text>
+    <text class="ac" x="640" y="28" font-weight="700">2025+ 智能体</text>
+  </g>
+  <g class="coldt" font-size="12" text-anchor="middle" font-weight="600">
+    <text x="190" y="276">第一次寒冬</text>
+    <text x="273" y="276">第二次寒冬</text>
+  </g>
+
+  <g class="m" font-size="12" text-anchor="middle">
+    <text x="120" y="306">萌芽与符号主义</text>
+    <text x="260" y="306">寒冬与专家系统</text>
+    <text x="400" y="306">深度学习革命</text>
+    <text x="540" y="306">大模型时代</text>
+    <text x="680" y="306">推理与智能体</text>
+  </g>
+  <g class="s" font-size="11" text-anchor="middle">
+    <text x="50" y="326">1950</text><text x="190" y="326">1974</text><text x="330" y="326">2006</text>
+    <text x="470" y="326">2017</text><text x="610" y="326">2024</text><text x="750" y="326">2026</text>
+  </g>
+</svg>

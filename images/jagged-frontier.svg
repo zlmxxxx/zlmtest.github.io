@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 340" role="img" aria-label="AI 能力参差不齐示意图：竞赛数学超过人类，读模拟时钟等简单任务却只有约一半准确率">
+  <style>
+    text { font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", system-ui, sans-serif; }
+    .bg { fill: #0d0f14; } .t { fill: #f4f4f5; } .m { fill: #a1a1aa; } .s { fill: #71717a; } .track { fill: #1c1f28; }
+    .hi { fill: #818cf8; } .lo { fill: #fbbf24; } .base { stroke: #f4f4f5; } .ac { fill: #818cf8; } .warn { fill: #fbbf24; }
+    @media (prefers-color-scheme: light) {
+      .bg { fill: #ffffff; } .t { fill: #18181b; } .m { fill: #52525b; } .s { fill: #71717a; } .track { fill: #f1f1f4; }
+      .hi { fill: #4f46e5; } .lo { fill: #d97706; } .base { stroke: #18181b; } .ac { fill: #4f46e5; } .warn { fill: #b45309; }
+    }
+  </style>
+  <rect class="bg" width="800" height="340"/>
+
+  <text class="t" x="30" y="34" font-size="15" font-weight="700">"参差不齐"的能力边界（相对人类水平，示意）</text>
+
+  <g>
+    <text class="t" x="30" y="78" font-size="14" font-weight="600">竞赛数学</text>
+    <text class="s" x="30" y="96" font-size="11.5">国际数学奥林匹克达到金牌水平</text>
+    <rect class="track" x="260" y="70" width="500" height="22" rx="6"/>
+    <rect class="hi" x="260" y="70" width="437" height="22" rx="6"/>
+
+    <text class="t" x="30" y="132" font-size="14" font-weight="600">博士级科学问答</text>
+    <text class="s" x="30" y="150" font-size="11.5">达到或超过人类专家</text>
+    <rect class="track" x="260" y="124" width="500" height="22" rx="6"/>
+    <rect class="hi" x="260" y="124" width="399" height="22" rx="6"/>
+
+    <text class="t" x="30" y="186" font-size="14" font-weight="600">真实代码修复</text>
+    <text class="s" x="30" y="204" font-size="11.5">一年内从约 60% 到接近人类基线</text>
+    <rect class="track" x="260" y="178" width="500" height="22" rx="6"/>
+    <rect class="hi" x="260" y="178" width="372" height="22" rx="6" fill-opacity=".85"/>
+
+    <text class="t" x="30" y="240" font-size="14" font-weight="600">智能体结构化任务</text>
+    <text class="s" x="30" y="258" font-size="11.5">仍约有三分之一失败</text>
+    <rect class="track" x="260" y="232" width="500" height="22" rx="6"/>
+    <rect class="lo" x="260" y="232" width="255" height="22" rx="6"/>
+
+    <text class="t" x="30" y="294" font-size="14" font-weight="600">读模拟时钟</text>
+    <text class="s" x="30" y="312" font-size="11.5">准确率仅约 50%</text>
+    <rect class="track" x="260" y="286" width="500" height="22" rx="6"/>
+    <rect class="lo" x="260" y="286" width="190" height="22" rx="6"/>
+  </g>
+
+  <line class="base" x1="640" y1="56" x2="640" y2="318" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text class="t" x="646" y="52" font-size="12" font-weight="600">人类水平</text>
+
+  <g font-size="12" font-weight="600">
+    <text class="ac" x="704" y="86">超越</text>
+    <text class="ac" x="666" y="140">持平</text>
+    <text class="warn" x="522" y="248">待提升</text>
+    <text class="warn" x="457" y="302">明显不足</text>
+  </g>
+</svg>

@@ -29,22 +29,44 @@
             <section class="page-section">
                 <div class="container">
                     <h2>AI、机器学习、深度学习是什么关系？</h2>
-                    <p class="section-desc">它们是层层包含的关系，就像俄罗斯套娃。</p>
+                    <p class="section-desc">它们是层层包含的关系，就像俄罗斯套娃：深度学习属于机器学习，机器学习属于人工智能。</p>
+                    <div class="media-row">
+                        <div class="prose reveal">
+                            <h3>人工智能（AI）：最大的那个圈</h3>
+                            <p>泛指一切让机器表现出"智能"的技术。早期的 AI 主要靠人写规则，例如"如果体温超过 38.5 度且咳嗽，则可能是流感"——这就是专家系统。</p>
+                            <h3>机器学习：让机器自己找规律</h3>
+                            <p>不再由人逐条写规则，而是给机器大量例子，让它自己总结。比如给它看几十万封标注过的邮件，它就能学会识别垃圾邮件。</p>
+                            <h3>深度学习：今天 AI 的主角</h3>
+                            <p>使用多层神经网络的机器学习方法。层数越多，能捕捉的模式越复杂。大语言模型、人脸识别、语音助手都建立在深度学习之上。</p>
+                        </div>
+                        <figure class="figure reveal">
+                            <img src="../images/ai-ml-dl.svg" alt="人工智能、机器学习与深度学习的包含关系示意图" width="800" height="420" loading="lazy">
+                            <figcaption>图：AI、机器学习与深度学习的包含关系</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </section>
+
+            <section class="page-section">
+                <div class="container">
+                    <h2>大模型是怎么"写"出文字的？</h2>
+                    <p class="section-desc">无论 AI 的回答多么流畅，它背后的基本动作只有一个：根据已有的文字，预测下一个最可能出现的词元（Token）。</p>
+                    <figure class="figure figure-wide reveal">
+                        <img src="../images/tokens.svg" alt="大模型如何处理文字：切分为 Token，再预测下一个 Token 的概率" width="800" height="320" loading="lazy">
+                        <figcaption>图：从切分 Token 到预测下一个词的完整过程（概率为示意）</figcaption>
+                    </figure>
                     <div class="grid-3">
                         <div class="card info-card reveal">
-                            <span class="card-kicker">最外层</span>
-                            <h3>人工智能（AI）</h3>
-                            <p>让机器表现出类似人类智能的所有技术的总称，包括早期基于规则的专家系统。</p>
+                            <span class="card-kicker">为什么它懂这么多？</span>
+                            <p>为了准确预测下一个词，模型必须在训练中"吸收"语法、常识、事实乃至推理方式。预测得越准，学到的知识就越多。</p>
                         </div>
                         <div class="card info-card reveal">
-                            <span class="card-kicker">中间层</span>
-                            <h3>机器学习</h3>
-                            <p>不靠人写规则，而是让机器从数据中自己总结规律。例如看过大量垃圾邮件后学会识别垃圾邮件。</p>
+                            <span class="card-kicker">为什么会胡说八道？</span>
+                            <p>模型只是在挑"看起来最合理"的下一个词，并不会查证事实。遇到冷门问题时，它可能编出一个通顺却错误的答案——这就是"幻觉"。</p>
                         </div>
                         <div class="card info-card reveal">
-                            <span class="card-kicker">最内层</span>
-                            <h3>深度学习</h3>
-                            <p>使用多层神经网络的机器学习方法，是今天大模型、图像识别、语音识别的核心技术。</p>
+                            <span class="card-kicker">为什么按 Token 计费？</span>
+                            <p>模型每读入或生成一个 Token 都要消耗计算。一个汉字大约对应一个 Token，所以输入越长、回答越长，费用就越高。</p>
                         </div>
                     </div>
                 </div>
@@ -53,11 +75,16 @@
             <section class="page-section">
                 <div class="container">
                     <h2>一个大模型是如何"炼成"的？</h2>
-                    <div class="stack">
-                        <div class="card stack-layer reveal"><strong>① 预训练</strong><span>用海量文本、代码训练模型"预测下一个词"，让它学会语言、知识与基本推理。这一步最耗算力。</span></div>
-                        <div class="card stack-layer reveal"><strong>② 指令微调</strong><span>用人工编写的问答示例教模型"听懂指令、好好回答"，从续写文本变成对话助手。</span></div>
-                        <div class="card stack-layer reveal"><strong>③ 对齐与强化学习</strong><span>根据人类偏好或可验证的结果打分，强化好的回答、抑制有害内容，并训练推理能力。</span></div>
-                        <div class="card stack-layer reveal"><strong>④ 部署与工具</strong><span>接入搜索、代码执行、企业数据等工具，加上安全过滤，最终成为你使用的产品。</span></div>
+                    <p class="section-desc">从一堆参数到你手机里的 AI 助手，通常要经过四个阶段。</p>
+                    <figure class="figure figure-wide reveal">
+                        <img src="../images/llm-training.svg" alt="大模型训练四个阶段流程图：预训练、指令微调、对齐与强化学习、部署与工具" width="800" height="300" loading="lazy">
+                        <figcaption>图：大模型训练的四个阶段</figcaption>
+                    </figure>
+                    <div class="prose reveal">
+                        <p><strong>预训练</strong>相当于让模型"博览群书"：读遍互联网文本、书籍和代码，学会语言和世界知识。这一步消耗了绝大部分算力，动辄需要数万块 GPU 连续运行数月。</p>
+                        <p><strong>指令微调</strong>相当于"岗前培训"：用人工编写的问答示例，教模型听懂指令、按格式回答。经过这一步，模型才从"续写文本"变成"对话助手"。</p>
+                        <p><strong>对齐与强化学习</strong>相当于"实习考核"：根据人类偏好或可自动验证的结果（如数学题对错）打分，强化好的行为、抑制有害内容。推理模型的"深度思考"能力，主要就是在这一阶段练出来的。</p>
+                        <p><strong>部署与工具</strong>则是"正式上岗"：接入搜索、代码执行和企业数据，加上安全过滤，最终成为你每天使用的产品。</p>
                     </div>
                     <div class="callout"><strong>一个关键认识：</strong>大模型本质上是在根据上下文预测最可能的下一个词，它并不"查数据库"。这解释了它为何知识渊博，也解释了它为何会编造看似合理的错误答案。</div>
                 </div>

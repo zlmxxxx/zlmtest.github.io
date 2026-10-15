@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" role="img" aria-label="扩散模型从纯噪声逐步去噪生成图像的过程示意">
+  <style>
+    text { font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", system-ui, sans-serif; }
+    .bg { fill: #0d0f14; } .t { fill: #f4f4f5; } .m { fill: #a1a1aa; } .s { fill: #71717a; } .ac { fill: #818cf8; }
+    .frame { fill: none; stroke: #2a2e3a; } .ln { stroke: #52525b; } .chip { fill: #818cf8; fill-opacity: .12; stroke: #818cf8; stroke-opacity: .5; }
+    @media (prefers-color-scheme: light) {
+      .bg { fill: #ffffff; } .t { fill: #18181b; } .m { fill: #52525b; } .s { fill: #71717a; } .ac { fill: #4f46e5; }
+      .frame { stroke: #e4e4e7; } .ln { stroke: #a1a1aa; } .chip { fill: #4f46e5; fill-opacity: .07; stroke: #4f46e5; stroke-opacity: .4; }
+    }
+  </style>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1e3a8a"/><stop offset=".6" stop-color="#f472b6"/><stop offset="1" stop-color="#fbbf24"/>
+    </linearGradient>
+    <filter id="noise" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="7"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+    <clipPath id="clip"><rect width="120" height="120" rx="12"/></clipPath>
+    <symbol id="scene" viewBox="0 0 120 120">
+      <rect width="120" height="120" fill="url(#sky)"/>
+      <circle cx="60" cy="78" r="16" fill="#fde68a"/>
+      <polygon points="0,120 0,86 28,58 48,80 72,44 100,74 120,62 120,120" fill="#334155"/>
+      <polygon points="72,44 64,54 72,52 80,56" fill="#f8fafc"/>
+      <polygon points="28,58 22,65 28,64 34,66" fill="#f8fafc"/>
+      <rect y="104" width="120" height="16" fill="#1e293b"/>
+    </symbol>
+  </defs>
+  <rect class="bg" width="800" height="300"/>
+
+  <rect class="chip" x="250" y="22" width="300" height="38" rx="19"/>
+  <text class="t" x="400" y="47" font-size="14" font-weight="600" text-anchor="middle">提示词："雪山下的日出"</text>
+
+  <g transform="translate(40 92)">
+    <g clip-path="url(#clip)"><rect width="120" height="120" fill="#6b7280"/><rect width="120" height="120" filter="url(#noise)"/></g>
+    <rect class="frame" width="120" height="120" rx="12"/>
+  </g>
+  <g transform="translate(195 92)">
+    <g clip-path="url(#clip)"><use href="#scene" width="120" height="120"/><rect width="120" height="120" filter="url(#noise)" opacity=".8"/></g>
+    <rect class="frame" width="120" height="120" rx="12"/>
+  </g>
+  <g transform="translate(350 92)">
+    <g clip-path="url(#clip)"><use href="#scene" width="120" height="120"/><rect width="120" height="120" filter="url(#noise)" opacity=".55"/></g>
+    <rect class="frame" width="120" height="120" rx="12"/>
+  </g>
+  <g transform="translate(505 92)">
+    <g clip-path="url(#clip)"><use href="#scene" width="120" height="120"/><rect width="120" height="120" filter="url(#noise)" opacity=".25"/></g>
+    <rect class="frame" width="120" height="120" rx="12"/>
+  </g>
+  <g transform="translate(660 92)">
+    <g clip-path="url(#clip)"><use href="#scene" width="120" height="120"/></g>
+    <rect class="frame" width="120" height="120" rx="12"/>
+  </g>
+
+  <g stroke-width="1.5">
+    <line class="ln" x1="164" y1="152" x2="190" y2="152"/>
+    <line class="ln" x1="319" y1="152" x2="345" y2="152"/>
+    <line class="ln" x1="474" y1="152" x2="500" y2="152"/>
+    <line class="ln" x1="629" y1="152" x2="655" y2="152"/>
+  </g>
+
+  <g font-size="13" text-anchor="middle">
+    <text class="t" x="100" y="236">纯随机噪声</text>
+    <text class="m" x="255" y="236">轮廓初现</text>
+    <text class="m" x="410" y="236">结构成形</text>
+    <text class="m" x="565" y="236">细节补全</text>
+    <text class="t" x="720" y="236">清晰图像</text>
+  </g>
+  <text class="s" x="400" y="276" font-size="12.5" text-anchor="middle">模型在提示词引导下反复"去噪"，每一步都让画面更接近描述——视频生成则是在时间维度上做同样的事</text>
+</svg>

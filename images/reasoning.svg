@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 330" role="img" aria-label="普通模型直接作答与推理模型先思考再作答的对比示意图">
+  <style>
+    text { font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", system-ui, sans-serif; }
+    .bg { fill: #0d0f14; } .panel { fill: #151821; stroke: #2a2e3a; } .step { fill: #818cf8; fill-opacity: .12; stroke: #818cf8; stroke-opacity: .55; }
+    .t { fill: #f4f4f5; } .m { fill: #a1a1aa; } .s { fill: #71717a; } .ac { fill: #818cf8; }
+    .ok { fill: #34d399; } .bad { fill: #f87171; } .okb { stroke: #34d399; } .badb { stroke: #f87171; } .ln { stroke: #52525b; }
+    @media (prefers-color-scheme: light) {
+      .bg { fill: #ffffff; } .panel { fill: #f6f6f8; stroke: #e4e4e7; } .step { fill: #4f46e5; fill-opacity: .07; stroke: #4f46e5; stroke-opacity: .45; }
+      .t { fill: #18181b; } .m { fill: #52525b; } .s { fill: #71717a; } .ac { fill: #4f46e5; }
+      .ok { fill: #059669; } .bad { fill: #dc2626; } .okb { stroke: #059669; } .badb { stroke: #dc2626; } .ln { stroke: #a1a1aa; }
+    }
+  </style>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" class="s"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="800" height="330"/>
+
+  <text class="m" x="30" y="34" font-size="13">题目：鸡兔同笼，共 35 个头、94 只脚，兔子有几只？</text>
+
+  <!-- 普通模型 -->
+  <text class="t" x="30" y="72" font-size="15" font-weight="700">普通模型：凭"直觉"直接作答</text>
+  <rect class="panel" x="30" y="86" width="120" height="44" rx="10"/>
+  <text class="t" x="90" y="113" font-size="14" text-anchor="middle">读题</text>
+  <line class="ln" x1="150" y1="108" x2="616" y2="108" stroke-width="1.5" stroke-dasharray="6 5" marker-end="url(#a)"/>
+  <rect class="panel badb" x="625" y="86" width="145" height="44" rx="10" stroke-width="1.5"/>
+  <text class="bad" x="697" y="113" font-size="14" font-weight="600" text-anchor="middle">15 只 ✗</text>
+
+  <!-- 推理模型 -->
+  <text class="t" x="30" y="178" font-size="15" font-weight="700">推理模型：先思考、再检查、后作答</text>
+  <g font-size="13.5" text-anchor="middle">
+    <rect class="panel" x="30" y="192" width="100" height="56" rx="10"/>
+    <text class="t" x="80" y="225">读题</text>
+
+    <rect class="step" x="150" y="192" width="112" height="56" rx="10"/>
+    <text class="t" x="206" y="215">设兔 x 只</text>
+    <text class="s" x="206" y="236" font-size="11.5">鸡 35−x 只</text>
+
+    <rect class="step" x="282" y="192" width="112" height="56" rx="10"/>
+    <text class="t" x="338" y="215">列方程</text>
+    <text class="s" x="338" y="236" font-size="11.5">4x+2(35−x)=94</text>
+
+    <rect class="step" x="414" y="192" width="112" height="56" rx="10"/>
+    <text class="t" x="470" y="215">求解</text>
+    <text class="s" x="470" y="236" font-size="11.5">x = 12</text>
+
+    <rect class="step" x="546" y="192" width="100" height="56" rx="10"/>
+    <text class="t" x="596" y="215">验算</text>
+    <text class="s" x="596" y="236" font-size="11.5">48+46=94 ✓</text>
+
+    <rect class="panel okb" x="666" y="192" width="104" height="56" rx="10" stroke-width="1.5"/>
+    <text class="ok" x="718" y="226" font-weight="600">12 只 ✓</text>
+  </g>
+  <g stroke-width="1.5" marker-end="url(#a)">
+    <line class="ln" x1="130" y1="220" x2="146" y2="220"/>
+    <line class="ln" x1="262" y1="220" x2="278" y2="220"/>
+    <line class="ln" x1="394" y1="220" x2="410" y2="220"/>
+    <line class="ln" x1="526" y1="220" x2="542" y2="220"/>
+    <line class="ln" x1="646" y1="220" x2="662" y2="220"/>
+  </g>
+  <path class="ln" d="M150 256 V264 H646 V256" fill="none" stroke-width="1.2"/>
+  <text class="ac" x="398" y="284" font-size="12.5" text-anchor="middle">思维链（Chain of Thought）：模型内部生成的推理过程</text>
+
+  <text class="s" x="30" y="312" font-size="12.5">代价：推理模型需要更多时间与 Token；收益：数学、编程、科学等多步骤问题的准确率大幅提升。</text>
+</svg>

@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 330" role="img" aria-label="视觉-语言-动作模型示意：摄像头画面与语言指令输入模型，输出机械臂动作">
+  <style>
+    text { font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", system-ui, sans-serif; }
+    .bg { fill: #0d0f14; } .panel { fill: #151821; stroke: #2a2e3a; } .t { fill: #f4f4f5; } .m { fill: #a1a1aa; } .s { fill: #71717a; }
+    .ac { fill: #818cf8; } .ln { stroke: #52525b; } .arm { stroke: #cbd5e1; } .joint { fill: #818cf8; } .table { fill: #334155; }
+    .chip { fill: #818cf8; fill-opacity: .12; stroke: #818cf8; stroke-opacity: .5; }
+    .g1 { stop-color: #818cf8; } .g2 { stop-color: #22d3ee; }
+    @media (prefers-color-scheme: light) {
+      .bg { fill: #ffffff; } .panel { fill: #f6f6f8; stroke: #e4e4e7; } .t { fill: #18181b; } .m { fill: #52525b; } .s { fill: #71717a; }
+      .ac { fill: #4f46e5; } .ln { stroke: #a1a1aa; } .arm { stroke: #475569; } .joint { fill: #4f46e5; } .table { fill: #cbd5e1; }
+      .chip { fill: #4f46e5; fill-opacity: .07; stroke: #4f46e5; stroke-opacity: .4; }
+      .g1 { stop-color: #4f46e5; } .g2 { stop-color: #0891b2; }
+    }
+  </style>
+  <defs>
+    <linearGradient id="core" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" class="g1"/><stop offset="1" class="g2"/>
+    </linearGradient>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" class="s"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="800" height="330"/>
+
+  <!-- 输入：画面 -->
+  <text class="s" x="30" y="34" font-size="12.5">输入 ① 摄像头画面</text>
+  <rect class="panel" x="30" y="44" width="210" height="120" rx="12"/>
+  <rect class="table" x="44" y="124" width="182" height="26" rx="4"/>
+  <rect x="70" y="100" width="28" height="24" rx="3" fill="#ef4444"/>
+  <path d="M150 124 V96 H206 V124" fill="none" stroke="#a16207" stroke-width="4"/>
+  <rect x="150" y="104" width="56" height="20" fill="#a16207" fill-opacity=".35"/>
+  <circle cx="84" cy="88" r="11" fill="none" stroke="#22d3ee" stroke-width="1.5" stroke-dasharray="3 3"/>
+
+  <!-- 输入：指令 -->
+  <text class="s" x="30" y="200" font-size="12.5">输入 ② 语言指令</text>
+  <rect class="panel" x="30" y="210" width="210" height="56" rx="12"/>
+  <text class="t" x="135" y="244" font-size="14" font-weight="600" text-anchor="middle">"把红色零件放进盒子"</text>
+
+  <!-- 模型 -->
+  <path class="ln" d="M240 104 C270 104 270 150 292 150" fill="none" stroke-width="1.5" marker-end="url(#a)"/>
+  <path class="ln" d="M240 238 C270 238 270 180 292 180" fill="none" stroke-width="1.5" marker-end="url(#a)"/>
+  <rect x="296" y="100" width="190" height="130" rx="18" fill="url(#core)"/>
+  <text x="391" y="152" font-size="20" font-weight="700" text-anchor="middle" fill="#ffffff">VLA 模型</text>
+  <text x="391" y="178" font-size="13" text-anchor="middle" fill="#ffffff" fill-opacity=".9">视觉 · 语言 · 动作</text>
+  <text x="391" y="200" font-size="12" text-anchor="middle" fill="#ffffff" fill-opacity=".75">理解场景 + 规划动作</text>
+  <path class="ln" d="M486 165 L540 165" fill="none" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- 输出：机械臂 -->
+  <text class="s" x="560" y="34" font-size="12.5">输出：连续的动作指令</text>
+  <rect class="table" x="560" y="214" width="220" height="12" rx="3"/>
+  <rect class="panel" x="600" y="196" width="60" height="18" rx="4"/>
+  <g stroke-width="10" stroke-linecap="round" fill="none">
+    <path class="arm" d="M630 196 L650 120"/>
+    <path class="arm" d="M650 120 L730 108"/>
+    <path class="arm" d="M730 108 L742 150"/>
+  </g>
+  <circle class="joint" cx="630" cy="196" r="8"/>
+  <circle class="joint" cx="650" cy="120" r="8"/>
+  <circle class="joint" cx="730" cy="108" r="8"/>
+  <path d="M734 156 L730 172 M750 156 L754 172" class="arm" stroke-width="4" stroke-linecap="round"/>
+  <rect x="733" y="174" width="20" height="16" rx="2" fill="#ef4444"/>
+
+  <g font-size="12.5" text-anchor="middle">
+    <rect class="chip" x="560" y="246" width="66" height="30" rx="15"/><text class="t" x="593" y="266">移动</text>
+    <rect class="chip" x="637" y="246" width="66" height="30" rx="15"/><text class="t" x="670" y="266">抓取</text>
+    <rect class="chip" x="714" y="246" width="66" height="30" rx="15"/><text class="t" x="747" y="266">放置</text>
+  </g>
+
+  <text class="s" x="30" y="308" font-size="12.5">执行—观察—调整持续闭环：机器人边做边看，根据新画面实时修正动作。</text>
+</svg>

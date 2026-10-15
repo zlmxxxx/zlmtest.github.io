@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320" role="img" aria-label="大模型如何处理文字：切分为 Token，再预测下一个 Token 的概率">
+  <style>
+    text { font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", system-ui, sans-serif; }
+    .bg { fill: #0d0f14; } .chip { fill: #818cf8; fill-opacity: .14; stroke: #818cf8; stroke-opacity: .6; }
+    .t { fill: #f4f4f5; } .m { fill: #a1a1aa; } .s { fill: #71717a; } .ac { fill: #818cf8; } .ac2 { fill: #22d3ee; }
+    .track { fill: #262a35; } .ln { stroke: #3a3f4d; } .model { fill: #151821; stroke: #818cf8; }
+    @media (prefers-color-scheme: light) {
+      .bg { fill: #ffffff; } .chip { fill: #4f46e5; fill-opacity: .08; stroke: #4f46e5; stroke-opacity: .5; }
+      .t { fill: #18181b; } .m { fill: #52525b; } .s { fill: #71717a; } .ac { fill: #4f46e5; } .ac2 { fill: #0891b2; }
+      .track { fill: #e4e4e7; } .ln { stroke: #d4d4d8; } .model { fill: #f6f6f8; stroke: #4f46e5; }
+    }
+  </style>
+  <rect class="bg" width="800" height="320"/>
+
+  <text class="s" x="30" y="40" font-size="13">① 输入文字被切分成 Token（词元）</text>
+  <g font-size="17" font-weight="600" text-anchor="middle">
+    <rect class="chip" x="30" y="56" width="84" height="44" rx="10"/><text class="t" x="72" y="84">人工</text>
+    <rect class="chip" x="124" y="56" width="84" height="44" rx="10"/><text class="t" x="166" y="84">智能</text>
+    <rect class="chip" x="218" y="56" width="84" height="44" rx="10"/><text class="t" x="260" y="84">正在</text>
+    <rect class="chip" x="312" y="56" width="84" height="44" rx="10"/><text class="t" x="354" y="84">改变</text>
+    <rect class="chip" x="406" y="56" width="84" height="44" rx="10"/><text class="t" x="448" y="84">世界</text>
+  </g>
+
+  <text class="s" x="30" y="150" font-size="13">② 转成向量</text>
+  <text class="s" x="30" y="168" font-size="13">送入模型</text>
+  <g stroke-width="1.2">
+    <line class="ln" x1="72" y1="100" x2="230" y2="180"/>
+    <line class="ln" x1="166" y1="100" x2="245" y2="180"/>
+    <line class="ln" x1="260" y1="100" x2="260" y2="180"/>
+    <line class="ln" x1="354" y1="100" x2="275" y2="180"/>
+    <line class="ln" x1="448" y1="100" x2="290" y2="180"/>
+  </g>
+  <rect class="model" x="130" y="180" width="260" height="70" rx="14" stroke-width="1.5"/>
+  <text class="t" x="260" y="212" font-size="17" font-weight="700" text-anchor="middle">大语言模型</text>
+  <text class="m" x="260" y="234" font-size="12.5" text-anchor="middle">注意力机制理解上下文关系</text>
+
+  <path class="ac" d="M400 211 L430 215 L400 219 Z"/>
+  <line class="ln" x1="390" y1="215" x2="402" y2="215" stroke-width="2"/>
+
+  <text class="s" x="450" y="140" font-size="13">③ 输出"下一个 Token"的概率（示意）</text>
+  <g font-size="15">
+    <text class="t" x="450" y="186" font-weight="600">。</text>
+    <rect class="track" x="490" y="174" width="220" height="14" rx="7"/>
+    <rect class="ac" x="490" y="174" width="136" height="14" rx="7"/>
+    <text class="m" x="722" y="186">62%</text>
+
+    <text class="t" x="450" y="221" font-weight="600">，</text>
+    <rect class="track" x="490" y="209" width="220" height="14" rx="7"/>
+    <rect class="ac" x="490" y="209" width="46" height="14" rx="7" fill-opacity=".75"/>
+    <text class="m" x="722" y="221">21%</text>
+
+    <text class="t" x="450" y="256" font-weight="600">！</text>
+    <rect class="track" x="490" y="244" width="220" height="14" rx="7"/>
+    <rect class="ac" x="490" y="244" width="20" height="14" rx="7" fill-opacity=".55"/>
+    <text class="m" x="722" y="256">9%</text>
+  </g>
+  <text class="s" x="30" y="295" font-size="12.5">模型选出一个 Token 接在句尾，再重复这一过程，就"写"出了完整回答。这也是它有时会编造内容（幻觉）的根源。</text>
+</svg>

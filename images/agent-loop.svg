@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" role="img" aria-label="AI 智能体工作循环：思考规划、执行行动、观察结果、更新记忆，并调用外部工具">
+  <style>
+    text { font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", system-ui, sans-serif; }
+    .bg { fill: #0d0f14; } .panel { fill: #151821; stroke: #2a2e3a; } .node { fill: #151821; stroke: #818cf8; stroke-opacity: .7; }
+    .t { fill: #f4f4f5; } .m { fill: #a1a1aa; } .s { fill: #71717a; } .ac { fill: #818cf8; } .ac2 { fill: #22d3ee; }
+    .arc { stroke: #818cf8; } .ln { stroke: #3a3f4d; } .ring { stroke: #818cf8; stroke-opacity: .15; }
+    .g1 { stop-color: #818cf8; } .g2 { stop-color: #22d3ee; }
+    @media (prefers-color-scheme: light) {
+      .bg { fill: #ffffff; } .panel { fill: #f6f6f8; stroke: #e4e4e7; } .node { fill: #ffffff; stroke: #4f46e5; stroke-opacity: .6; }
+      .t { fill: #18181b; } .m { fill: #52525b; } .s { fill: #71717a; } .ac { fill: #4f46e5; } .ac2 { fill: #0891b2; }
+      .arc { stroke: #4f46e5; } .ln { stroke: #d4d4d8; } .ring { stroke: #4f46e5; stroke-opacity: .12; }
+      .g1 { stop-color: #4f46e5; } .g2 { stop-color: #0891b2; }
+    }
+  </style>
+  <defs>
+    <linearGradient id="core" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" class="g1"/><stop offset="1" class="g2"/>
+    </linearGradient>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 Z" class="ac"/>
+    </marker>
+    <marker id="arr-gray" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 Z" class="s"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="800" height="420"/>
+
+  <circle class="ring" cx="300" cy="210" r="140" fill="none" stroke-width="22"/>
+
+  <!-- 循环箭头 -->
+  <g fill="none" stroke-width="2" marker-end="url(#arr)">
+    <path class="arc" d="M380.3 95.3 A140 140 0 0 1 414.7 129.7"/>
+    <path class="arc" d="M414.7 290.3 A140 140 0 0 1 380.3 324.7"/>
+    <path class="arc" d="M219.7 324.7 A140 140 0 0 1 185.3 290.3"/>
+    <path class="arc" d="M185.3 129.7 A140 140 0 0 1 219.7 95.3"/>
+  </g>
+
+  <!-- 核心 -->
+  <circle cx="300" cy="210" r="56" fill="url(#core)"/>
+  <text x="300" y="206" font-size="17" font-weight="700" text-anchor="middle" fill="#ffffff">大模型</text>
+  <text x="300" y="228" font-size="12" text-anchor="middle" fill="#ffffff" fill-opacity=".85">"大脑"</text>
+
+  <!-- 四个环节 -->
+  <rect class="node" x="240" y="48" width="120" height="44" rx="12"/>
+  <text class="t" x="300" y="76" font-size="15" font-weight="600" text-anchor="middle">① 思考规划</text>
+  <rect class="node" x="380" y="188" width="120" height="44" rx="12"/>
+  <text class="t" x="440" y="216" font-size="15" font-weight="600" text-anchor="middle">② 执行行动</text>
+  <rect class="node" x="240" y="328" width="120" height="44" rx="12"/>
+  <text class="t" x="300" y="356" font-size="15" font-weight="600" text-anchor="middle">③ 观察结果</text>
+  <rect class="node" x="100" y="188" width="120" height="44" rx="12"/>
+  <text class="t" x="160" y="216" font-size="15" font-weight="600" text-anchor="middle">④ 更新记忆</text>
+
+  <!-- 用户目标与交付 -->
+  <rect class="panel" x="20" y="22" width="170" height="54" rx="12"/>
+  <text class="s" x="36" y="44" font-size="12">输入</text>
+  <text class="t" x="36" y="64" font-size="14" font-weight="600">用户目标：写竞品分析</text>
+  <path class="ln" d="M190 49 L236 62" stroke-width="1.5" fill="none" marker-end="url(#arr-gray)"/>
+
+  <rect class="panel" x="20" y="346" width="170" height="54" rx="12"/>
+  <text class="s" x="36" y="368" font-size="12">输出</text>
+  <text class="t" x="36" y="388" font-size="14" font-weight="600">交付报告，请人审核</text>
+  <path class="ln" d="M240 360 L194 370" stroke-width="1.5" fill="none" marker-end="url(#arr-gray)"/>
+
+  <!-- 工具面板 -->
+  <path class="ln" d="M502 210 L556 210" stroke-width="1.5" stroke-dasharray="5 4" fill="none" marker-start="url(#arr-gray)" marker-end="url(#arr-gray)"/>
+  <rect class="panel" x="560" y="96" width="220" height="228" rx="16"/>
+  <text class="t" x="582" y="128" font-size="15" font-weight="700">可调用的工具</text>
+  <text class="s" x="582" y="148" font-size="12">通过 MCP 等协议统一接入</text>
+  <g font-size="14">
+    <circle class="ac" cx="590" cy="180" r="5"/><text class="m" x="604" y="185">网页搜索</text>
+    <circle class="ac" cx="590" cy="214" r="5"/><text class="m" x="604" y="219">代码执行与数据分析</text>
+    <circle class="ac2" cx="590" cy="248" r="5"/><text class="m" x="604" y="253">浏览器 / 电脑操作</text>
+    <circle class="ac2" cx="590" cy="282" r="5"/><text class="m" x="604" y="287">企业系统（邮件、CRM）</text>
+  </g>
+</svg>

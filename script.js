@@ -252,6 +252,10 @@ async function fetchPage(name) {
     if (!article) throw new Error('页面缺少 .page 内容');
 
     rewriteLinks(article, url);
+    // 子页面中的图片路径相对于 pages/，载入外壳前改为绝对地址
+    article.querySelectorAll('img[src]').forEach(img => {
+        img.setAttribute('src', new URL(img.getAttribute('src'), url).href);
+    });
     const page = { title: doc.title, node: article };
     pageCache.set(name, page);
     return page;

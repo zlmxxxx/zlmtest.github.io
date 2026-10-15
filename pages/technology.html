@@ -52,6 +52,10 @@
                                 <h3>推理模型</h3>
                             </div>
                             <p>传统大模型"脱口而出"，推理模型则会先在内部生成较长的思考过程，检查、回溯、再给出答案。</p>
+                            <figure class="figure">
+                                <img src="../images/reasoning.svg" alt="普通模型直接作答与推理模型先思考再作答的对比示意图" loading="lazy">
+                                <figcaption>图：同一道鸡兔同笼题，"直觉作答"与"分步推理"的差别</figcaption>
+                            </figure>
                             <div class="detail-grid">
                                 <div><h4>原理</h4><p>在可自动判分的任务（数学、代码）上用强化学习训练模型的思维链，并在推理时投入更多计算（测试时计算）。</p></div>
                                 <div><h4>最新进展</h4><p>2025 年开源推理模型大幅降低了成本门槛；顶尖模型在竞赛数学、博士级科学问答上达到或超过人类专家水平，并在国际数学奥林匹克达到金牌水平。</p></div>
@@ -66,6 +70,10 @@
                                 <h3>AI 智能体（Agent）</h3>
                             </div>
                             <p>智能体 = 大模型 + 工具 + 记忆 + 规划。它不只回答问题，而是能自主拆解目标、调用工具并检查结果，直到任务完成。</p>
+                            <figure class="figure">
+                                <img src="../images/agent-loop.svg" alt="AI 智能体工作循环：思考规划、执行行动、观察结果、更新记忆，并调用外部工具" loading="lazy">
+                                <figcaption>图：智能体的"思考—行动—观察"循环与工具调用</figcaption>
+                            </figure>
                             <div class="detail-grid">
                                 <div><h4>原理</h4><p>模型在"思考—行动—观察"的循环中工作：决定调用哪个工具（搜索、代码执行、浏览器、企业系统），读取结果后继续下一步。</p></div>
                                 <div><h4>最新进展</h4><p>MCP 等开放协议让智能体可以标准化地连接各类数据与软件；编程智能体已能独立修复真实代码仓库中的大部分问题；长时程智能体可连续工作数小时。</p></div>
@@ -80,6 +88,10 @@
                                 <h3>多模态生成</h3>
                             </div>
                             <p>一个模型同时理解和生成文字、图像、语音与视频，AI 开始像人一样"看、听、说、画"。</p>
+                            <figure class="figure">
+                                <img src="../images/diffusion.svg" alt="扩散模型从纯噪声逐步去噪生成图像的过程示意" loading="lazy">
+                                <figcaption>图：扩散模型如何从噪声中"画"出一张图</figcaption>
+                            </figure>
                             <div class="detail-grid">
                                 <div><h4>原理</h4><p>将不同模态编码到统一的表示空间；图像与视频生成多采用扩散模型或扩散与 Transformer 结合的架构。</p></div>
                                 <div><h4>最新进展</h4><p>视频生成已能同步产出画面、对白与音效，时长与一致性显著提升；实时语音对话的延迟接近人类交谈。</p></div>
@@ -108,6 +120,10 @@
                                 <h3>具身智能</h3>
                             </div>
                             <p>让 AI 拥有"身体"，在物理世界中感知、决策与行动。人形机器人是最受关注的载体。</p>
+                            <figure class="figure">
+                                <img src="../images/vla.svg" alt="视觉-语言-动作模型示意：摄像头画面与语言指令输入模型，输出机械臂动作" loading="lazy">
+                                <figcaption>图：VLA 模型把"看到的"和"听到的"转化为动作</figcaption>
+                            </figure>
                             <div class="detail-grid">
                                 <div><h4>原理</h4><p>视觉-语言-动作（VLA）模型把摄像头画面和自然语言指令直接映射为机械臂、关节的动作；世界模型与仿真训练弥补真实数据不足。</p></div>
                                 <div><h4>最新进展</h4><p>我国人形机器人 2026 年整机产量有望突破 10 万台；机器人开始承担汽车零部件装配、物流分拣等真实工作。</p></div>
@@ -122,6 +138,11 @@
                                 <h3>AI for Science</h3>
                             </div>
                             <p>用 AI 加速科学发现本身。从预测蛋白质结构到筛选新材料，AI 正在改变科研范式。</p>
+                            <div class="kpi-strip">
+                                <div class="kpi"><strong>2 亿+</strong><span>AlphaFold 数据库中的蛋白质结构预测</span></div>
+                                <div class="kpi"><strong>2024</strong><span>诺贝尔化学奖授予蛋白质结构预测与设计</span></div>
+                                <div class="kpi"><strong>数年 → 数分钟</strong><span>单个蛋白质结构解析所需时间（实验 vs 预测）</span></div>
+                            </div>
                             <div class="detail-grid">
                                 <div><h4>原理</h4><p>在科学数据上训练专用模型，学习分子、材料、天气等复杂系统的规律，替代或加速昂贵的实验与数值模拟。</p></div>
                                 <div><h4>最新进展</h4><p>蛋白质结构预测获 2024 年诺贝尔化学奖；AI 天气预报在多项指标上超越传统数值模式；"AI 科学家"开始参与提出假设与设计实验。</p></div>
