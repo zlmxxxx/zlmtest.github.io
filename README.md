@@ -1,10 +1,10 @@
 # AI · ERA — 人工智能发展与未来前景
 
-一个介绍人工智能最新进展的中文静态网站，内容更新于 2026 年 10 月。
+一个介绍人工智能最新进展的中文静态网站，数据更新至 2026 年 10 月。
 
 **在线访问：** [https://zlm-test.site](https://zlm-test.site)
 
-网站从数据、历史、技术、行业、中国产业、挑战治理、未来趋势和入门术语八个角度，系统梳理 AI 的现状与前景。核心数据来自斯坦福大学 HAI《2026 AI Index》与工业和信息化部公开发布的信息。
+网站从数据、历史、技术、行业、中国产业、挑战治理、未来趋势和入门术语八个角度，系统梳理 AI 的现状与前景。核心数据来自 CNNIC《生成式人工智能应用发展报告（2026）》、工业和信息化部、安永（EY）、Counterpoint Research 等 2026 年最新发布，以及斯坦福大学 HAI《2026 AI Index》的 2025 年度回顾。
 
 ## 功能特点
 
@@ -24,7 +24,7 @@
 
 | 路由 | 专题 | 内容概要 |
 |---|---|---|
-| `#/stats` | 数据洞察 | 投资增长、2017—2025 企业采用趋势、调用成本下降、普及速度、中美对比 |
+| `#/stats` | 数据洞察 | 2026 年上半年投资、用户、算力与人形机器人数据；2025 年度回顾、企业采用趋势、成本下降、中美对比 |
 | `#/timeline` | 发展里程碑 | 从 1950 年图灵测试到 2026 年智能体时代的五个阶段 |
 | `#/technology` | 前沿技术详解 | AI 技术栈；推理模型、智能体、多模态、开源、具身智能、AI for Science |
 | `#/industries` | 行业应用 | 医疗、金融、制造、教育、交通等九大行业场景与企业落地方法 |
@@ -87,5 +87,9 @@ python -m http.server 8000
 - [Stanford HAI：The 2025 AI Index Report](https://hai.stanford.edu/ai-index/2025-ai-index-report)
 - [新京报：工信部 2026 世界人工智能大会新闻发布会](https://www.bjnews.com.cn/detail/1783412916129538.html)
 - [新华网：2026 世界人工智能大会报道](https://www.news.cn/tech/20260707/1e0c79e82bb94a97a1488ebe3984834d/c.html)
+- [中国新闻网：CNNIC《生成式人工智能应用发展报告（2026）》](https://www.chinanews.com.cn/cj/2026/09-29/10705475.shtml)
+- [EY：Global AI investment hits record $430 billion in H1 2026](https://www.ey.com/en_ie/newsroom/2026/08/global-ai-investment-hits-record-430bn-in-h1-2026)
+- [Counterpoint：2026 年上半年全球人形机器人出货量](https://counterpointresearch.com/en/insights/global-humanoid-robot-shipments-soar-nearly-300-percent-yoy-in-h1-2026)
+- [国家发展改革委："十五五"规划纲要](https://www.ndrc.gov.cn/fggz/fzzlgh/gjfzgh/202603/U020260317369114704096.pdf)
 
 > 网站内容仅供学习与科普参考。部分数据转引自公开报道与报告解读，引用前请以原始来源为准。
