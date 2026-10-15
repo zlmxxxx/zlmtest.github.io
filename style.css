@@ -352,6 +352,17 @@ section {
     padding: 2rem 1.6rem;
 }
 
+/* 数字卡片上的"地区 · 时间"标签 */
+.stat-scope {
+    display: inline-block;
+    margin-bottom: 0.75rem;
+    padding: 0.1rem 0.6rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    color: var(--text-subtle);
+    font-size: 0.75rem;
+}
+
 .stat-number {
     display: flex;
     align-items: baseline;
