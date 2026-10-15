@@ -134,82 +134,220 @@ function formatNumber(value, decimals) {
     });
 }
 
-function animateNumbers() {
-    const numbers = document.querySelectorAll('.stat-value');
+function animateNumber(num) {
+    const raw = num.dataset.target;
+    const target = parseFloat(raw);
+    // 小数位数跟随 data-target 的写法，避免 80 显示成 80.0
+    const decimals = (raw.split('.')[1] || '').length;
 
-    numbers.forEach(num => {
-        const raw = num.dataset.target;
-        const target = parseFloat(raw);
-        // 小数位数跟随 data-target 的写法，避免 80 显示成 80.0
-        const decimals = (raw.split('.')[1] || '').length;
-
-        if (reducedMotion.matches) {
-            num.textContent = formatNumber(target, decimals);
-            return;
-        }
-
-        const duration = 2000;
-        const startTime = performance.now();
-
-        function update(currentTime) {
-            const elapsed = currentTime - startTime;
-            const progress = Math.min(Math.max(elapsed / duration, 0), 1);
-            const easeOut = 1 - Math.pow(1 - progress, 3);
-            const current = target * easeOut;
-
-            num.textContent = formatNumber(decimals > 0 ? current : Math.floor(current), decimals);
-
-            if (progress < 1) {
-                requestAnimationFrame(update);
-            }
-        }
-
-        num.textContent = formatNumber(0, decimals);
-        requestAnimationFrame(update);
-    });
-}
-
-// ========== 滚动显现动画 ==========
-function handleScrollAnimations() {
-    const revealElements = document.querySelectorAll('.reveal');
-    const statsSection = document.getElementById('stats');
-
-    function startStats() {
-        if (!statsSection.dataset.animated) {
-            statsSection.dataset.animated = 'true';
-            animateNumbers();
-        }
-    }
-
-    // 不支持 IntersectionObserver 时直接显示全部内容
-    if (!('IntersectionObserver' in window)) {
-        revealElements.forEach(el => el.classList.add('visible'));
-        startStats();
+    if (reducedMotion.matches) {
+        num.textContent = formatNumber(target, decimals);
         return;
     }
 
-    const observerOptions = {
-        threshold: 0.15,
-        rootMargin: '0px 0px -50px 0px'
-    };
+    const duration = 2000;
+    const startTime = performance.now();
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
+    function update(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(Math.max(elapsed / duration, 0), 1);
+        const easeOut = 1 - Math.pow(1 - progress, 3);
+        const current = target * easeOut;
 
-                // 数字统计区触发数字动画
-                if (entry.target.classList.contains('stat-card')) {
-                    startStats();
-                }
-            }
-        });
-    }, observerOptions);
+        num.textContent = formatNumber(decimals > 0 ? current : Math.floor(current), decimals);
 
-    revealElements.forEach(el => {
-        observer.observe(el);
+        if (progress < 1) {
+            requestAnimationFrame(update);
+        }
+    }
+
+    num.textContent = formatNumber(0, decimals);
+    requestAnimationFrame(update);
+}
+
+// ========== 滚动显现动画 ==========
+const revealObserver = 'IntersectionObserver' in window ? new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+
+        // 卡片出现时启动其中的数字动画
+        entry.target.querySelectorAll('.stat-value[data-target]').forEach(animateNumber);
     });
+}, {
+    threshold: 0.15,
+    rootMargin: '0px 0px -50px 0px'
+}) : null;
+
+// 对新出现的内容（首页或载入的子页面）启用渐显
+function observeReveals(root) {
+    root.querySelectorAll('.reveal:not(.visible)').forEach(el => {
+        if (revealObserver) {
+            revealObserver.observe(el);
+        } else {
+            // 不支持 IntersectionObserver 时直接显示全部内容
+            el.classList.add('visible');
+        }
+    });
+}
+
+// ========== 页面嵌套路由 ==========
+// 子页面是 pages/ 下可独立访问的完整 HTML；在首页外壳中通过 #/名称 载入其 .page 内容
+const homeView = document.getElementById('home-view');
+const pageView = document.getElementById('page-view');
+const shellBase = new URL('.', location.href);
+const homeTitle = document.title;
+const pageCache = new Map();
+// 兼容旧版单页的锚点链接
+const LEGACY_ANCHORS = { stats: 'stats', timeline: 'timeline', technology: 'technology', challenges: 'challenges', future: 'future' };
+let routeToken = 0;
+
+function pageUrl(name) {
+    return new URL(`pages/${name}.html`, shellBase);
+}
+
+// 把指向首页或子页面的链接改写为 #/路由，其余链接保持不变
+function toRouteHref(href, baseUrl) {
+    let url;
+    try {
+        url = new URL(href, baseUrl);
+    } catch (e) {
+        return null;
+    }
+    if (url.origin !== shellBase.origin) return null;
+
+    const base = shellBase.pathname;
+    if (url.pathname === base || url.pathname === base + 'index.html') {
+        return url.hash && !url.hash.startsWith('#/') ? url.hash : '#/';
+    }
+    if (!url.pathname.startsWith(base)) return null;
+    const match = url.pathname.slice(base.length).match(/^pages\/([\w-]+)\.html$/);
+    return match ? `#/${match[1]}` : null;
+}
+
+function rewriteLinks(root, baseUrl) {
+    root.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href');
+        if (href.startsWith('#')) return;
+        const routeHref = toRouteHref(href, baseUrl);
+        if (routeHref) a.setAttribute('href', routeHref);
+    });
+}
+
+function currentRoute() {
+    const hash = location.hash;
+    if (hash.startsWith('#/')) return decodeURIComponent(hash.slice(2)).replace(/\/$/, '');
+    return '';
+}
+
+async function fetchPage(name) {
+    if (pageCache.has(name)) return pageCache.get(name);
+
+    const url = pageUrl(name);
+    const res = await fetch(url);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const doc = new DOMParser().parseFromString(await res.text(), 'text/html');
+    const article = doc.querySelector('.page');
+    if (!article) throw new Error('页面缺少 .page 内容');
+
+    rewriteLinks(article, url);
+    const page = { title: doc.title, node: article };
+    pageCache.set(name, page);
+    return page;
+}
+
+function setActiveNav(name) {
+    document.querySelectorAll('#nav-links a').forEach(a => {
+        if (a.getAttribute('href') === `#/${name}`) {
+            a.setAttribute('aria-current', 'page');
+        } else {
+            a.removeAttribute('aria-current');
+        }
+    });
+}
+
+function showMessage(title, text) {
+    const box = document.createElement('div');
+    box.className = 'container page-message';
+    const h1 = document.createElement('h1');
+    h1.textContent = title;
+    const p = document.createElement('p');
+    p.textContent = text;
+    const a = document.createElement('a');
+    a.className = 'btn btn-ghost';
+    a.href = '#/';
+    a.textContent = '← 返回首页';
+    box.append(h1, p, a);
+    pageView.replaceChildren(box);
+    return h1;
+}
+
+async function renderRoute(isInitial) {
+    // 旧版锚点 #stats 等跳转到对应子页面
+    const legacy = LEGACY_ANCHORS[location.hash.slice(1)];
+    if (legacy) history.replaceState(null, '', `#/${legacy}`);
+
+    const name = currentRoute();
+    const token = ++routeToken;
+
+    // 首页：显示首页视图；普通锚点（如 #topics）滚动到对应位置
+    if (!name) {
+        pageView.hidden = true;
+        homeView.hidden = false;
+        document.title = homeTitle;
+        setActiveNav('');
+        const anchor = location.hash.length > 1 && !location.hash.startsWith('#/')
+            ? document.getElementById(location.hash.slice(1))
+            : null;
+        if (anchor) {
+            anchor.scrollIntoView();
+        } else if (!isInitial) {
+            window.scrollTo({ top: 0, behavior: 'instant' });
+        }
+        return;
+    }
+
+    homeView.hidden = true;
+    pageView.hidden = false;
+    pageView.setAttribute('aria-busy', 'true');
+    pageView.innerHTML = '<div class="container page-message"><p class="page-loading">正在载入…</p></div>';
+    setActiveNav(name);
+    window.scrollTo({ top: 0, behavior: 'instant' });
+
+    let heading;
+    try {
+        if (!/^[\w-]+$/.test(name)) throw new Error('无效路由');
+        const page = await fetchPage(name);
+        if (token !== routeToken) return;
+
+        pageView.replaceChildren(document.importNode(page.node, true));
+        document.title = page.title;
+        observeReveals(pageView);
+        heading = pageView.querySelector('h1');
+    } catch (err) {
+        if (token !== routeToken) return;
+        // 直接双击打开本地文件时浏览器禁止 fetch，退回到独立子页面
+        if (location.protocol === 'file:' && /^[\w-]+$/.test(name)) {
+            location.href = pageUrl(name).href;
+            return;
+        }
+        document.title = `页面未找到 · ${homeTitle}`;
+        heading = showMessage('页面未找到', '该页面不存在或暂时无法载入，请返回首页或稍后重试。');
+    }
+
+    pageView.removeAttribute('aria-busy');
+    // 路由切换后把焦点移到标题，方便键盘与读屏用户
+    if (heading && !isInitial) {
+        heading.tabIndex = -1;
+        heading.focus({ preventScroll: true });
+    }
+}
+
+function initRouter() {
+    rewriteLinks(document, location.href);
+    window.addEventListener('hashchange', () => renderRoute(false));
+    renderRoute(true);
 }
 
 // ========== 导航栏 ==========
@@ -272,5 +410,6 @@ readThemeColors();
 resizeCanvas();
 initParticles();
 startParticles();
-handleScrollAnimations();
+observeReveals(homeView);
 initNav();
+initRouter();
