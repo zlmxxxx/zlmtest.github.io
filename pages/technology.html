@@ -23,8 +23,41 @@
                 <div class="breadcrumb"><a href="../index.html">首页</a><span aria-hidden="true">/</span><span>前沿技术详解</span></div>
                 <span class="eyebrow">Frontier</span>
                 <h1>前沿技术详解</h1>
-                <p class="lead">今天的 AI 系统由多层技术堆叠而成。先看懂整体"技术栈"，再逐一拆解当下最重要的六个方向：它们是什么、进展到哪、能做什么、还差什么。</p>
+                <p class="lead">AI 的能力正在指数式增长。本页先用数据看清能力增长的速度，再看懂整体"技术栈"，最后逐一拆解当下最重要的六个方向：它们是什么、进展到哪、能做什么、还差什么。</p>
             </header>
+
+            <section class="page-section">
+                <div class="container">
+                    <h2>能力增长趋势：AI 能独立工作多久？</h2>
+                    <p class="section-desc">衡量 AI 进步，一个直观的指标是"它能独立完成多长的任务"。研究机构 METR 用人类专家完成某项软件任务所需的时间来衡量任务难度，再测试 AI 能以 50% 的成功率完成多长的任务。</p>
+                    <figure class="figure figure-wide reveal">
+                        <img src="../images/time-horizon.svg" alt="AI 能独立完成的软件任务时长（METR 50% 时间跨度）对数坐标图：从 2019 年约 2 秒增长到 2026 年约 12 至 20 小时" width="800" height="340" loading="lazy">
+                        <figcaption>图：AI 能以 50% 成功率完成的任务时长（METR，对数坐标，示意量级与趋势）</figcaption>
+                    </figure>
+                    <div class="kpi-strip reveal">
+                        <div class="kpi"><strong>约 7 个月</strong><span>2019—2024 年任务时长翻一番所需时间（METR）</span></div>
+                        <div class="kpi"><strong>约 3—4 个月</strong><span>2024 年以来的翻番时间（METR，2026 年修订）</span></div>
+                        <div class="kpi"><strong>4—5 倍/年</strong><span>前沿模型训练算力年增长（Epoch AI）</span></div>
+                        <div class="kpi"><strong>12% → 66%</strong><span>电脑操作基准 OSWorld 的智能体成功率（AI Index 2026）</span></div>
+                    </div>
+                    <div class="grid-2">
+                        <div class="card info-card reveal">
+                            <h3>这条曲线说明了什么？</h3>
+                            <p>2019 年的 GPT-2 只能完成人类几秒钟就能做完的任务；到 2026 年，最前沿的模型已能以 50% 的成功率完成人类专家需要十几个小时的软件任务。在对数坐标上，这是一条持续上扬的直线，意味着能力在<strong>指数式</strong>增长，而且 2024 年以来还在加速。</p>
+                            <p style="margin-top: 0.8rem;">同一时期，代码修复基准 SWE-bench Verified 的解决率一年内从约 60% 升至接近 100%，博士级科学问答 GPQA 的最高得分（约 93%）也超过了人类专家基线（约 81%）。</p>
+                        </div>
+                        <div class="card info-card reveal">
+                            <h3>解读时需要注意</h3>
+                            <ul class="dot-list">
+                                <li><strong>50% 不等于可靠：</strong>能以一半概率完成，不代表可以放心把这类任务交给 AI</li>
+                                <li><strong>只覆盖软件类任务：</strong>不能直接推广为 AI 的整体能力</li>
+                                <li><strong>接近测量上限：</strong>现有任务集对 16 小时以上的任务难以可靠测量，最新数据误差较大</li>
+                                <li><strong>各点版本不同：</strong>图中数据来自 METR 不同版本的任务集，仅用于展示量级与趋势</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             <section class="page-section">
                 <div class="container">
@@ -156,7 +189,7 @@
 
             <nav class="container page-pager" aria-label="专题翻页">
                 <a class="card pager-link prev" href="timeline.html"><small>← 上一篇</small><strong>发展里程碑</strong></a>
-                <a class="card pager-link next" href="industries.html"><small>下一篇 →</small><strong>行业应用</strong></a>
+                <a class="card pager-link next" href="compute.html"><small>下一篇 →</small><strong>算力与能源</strong></a>
             </nav>
         </article>
     </main>

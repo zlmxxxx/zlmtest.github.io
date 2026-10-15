@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 330" role="img" aria-label="AI 基础设施链条：电力、数据中心、AI 芯片与模型训练，以及各环节的关键数字">
+  <style>
+    text { font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", system-ui, sans-serif; }
+    .bg { fill: #0d0f14; } .panel { fill: #151821; stroke: #2a2e3a; } .t { fill: #f4f4f5; } .m { fill: #a1a1aa; } .s { fill: #71717a; }
+    .ac { fill: #818cf8; } .ac2 { fill: #22d3ee; } .warm { fill: #fbbf24; } .ln { stroke: #52525b; } .icon { stroke: #818cf8; }
+    @media (prefers-color-scheme: light) {
+      .bg { fill: #ffffff; } .panel { fill: #f6f6f8; stroke: #e4e4e7; } .t { fill: #18181b; } .m { fill: #52525b; } .s { fill: #71717a; }
+      .ac { fill: #4f46e5; } .ac2 { fill: #0891b2; } .warm { fill: #d97706; } .ln { stroke: #a1a1aa; } .icon { stroke: #4f46e5; }
+    }
+  </style>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" class="s"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="800" height="330"/>
+
+  <text class="t" x="30" y="32" font-size="15" font-weight="700">一次 AI 对话背后的"基础设施链条"</text>
+
+  <!-- 四个环节 -->
+  <g>
+    <rect class="panel" x="30" y="56" width="168" height="196" rx="14"/>
+    <g class="icon" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M58 76 L48 98 H60 L52 118 L72 92 H60 L68 76 Z"/>
+    </g>
+    <text class="t" x="50" y="146" font-size="17" font-weight="700">电力</text>
+    <text class="warm" x="50" y="178" font-size="22" font-weight="700">485 TWh</text>
+    <text class="m" x="50" y="200" font-size="12">2025 年全球数据中心用电</text>
+    <text class="s" x="50" y="228" font-size="11.5">2030 年预计约 950 TWh</text>
+    <text class="s" x="50" y="244" font-size="11.5">约占全球用电 3%</text>
+  </g>
+  <g>
+    <rect class="panel" x="222" y="56" width="168" height="196" rx="14"/>
+    <g class="icon" fill="none" stroke-width="2" stroke-linejoin="round">
+      <rect x="244" y="78" width="34" height="40" rx="3"/><path d="M250 88 H272 M250 98 H272 M250 108 H272"/>
+    </g>
+    <text class="t" x="242" y="146" font-size="17" font-weight="700">数据中心</text>
+    <text class="ac" x="242" y="178" font-size="22" font-weight="700">7,000 亿+</text>
+    <text class="m" x="242" y="200" font-size="12">美元：四大科技公司</text>
+    <text class="m" x="242" y="216" font-size="12">2026 年资本开支指引</text>
+    <text class="s" x="242" y="244" font-size="11.5">2025 年约 4,100—4,400 亿</text>
+  </g>
+  <g>
+    <rect class="panel" x="414" y="56" width="168" height="196" rx="14"/>
+    <g class="icon" fill="none" stroke-width="2" stroke-linejoin="round">
+      <rect x="440" y="82" width="32" height="32" rx="4"/><rect x="448" y="90" width="16" height="16" rx="2"/>
+      <path d="M446 76 V82 M456 76 V82 M466 76 V82 M446 114 V120 M456 114 V120 M466 114 V120 M434 88 H440 M434 98 H440 M434 108 H440 M472 88 H478 M472 98 H478 M472 108 H478"/>
+    </g>
+    <text class="t" x="434" y="146" font-size="17" font-weight="700">算力</text>
+    <text class="ac2" x="434" y="178" font-size="22" font-weight="700">2,185</text>
+    <text class="m" x="434" y="200" font-size="12">EFLOPS：我国智能算力</text>
+    <text class="m" x="434" y="216" font-size="12">（2026 年 6 月，+177%）</text>
+    <text class="s" x="434" y="244" font-size="11.5">2030 目标 9,800 EFLOPS</text>
+  </g>
+  <g>
+    <rect class="panel" x="606" y="56" width="168" height="196" rx="14"/>
+    <g class="icon" fill="none" stroke-width="2" stroke-linecap="round">
+      <circle cx="636" cy="98" r="7"/><circle cx="660" cy="82" r="7"/><circle cx="660" cy="114" r="7"/>
+      <path d="M643 95 L653 85 M643 101 L653 111"/>
+    </g>
+    <text class="t" x="626" y="146" font-size="17" font-weight="700">模型训练</text>
+    <text class="ac" x="626" y="178" font-size="22" font-weight="700">4—5 倍/年</text>
+    <text class="m" x="626" y="200" font-size="12">前沿模型训练算力</text>
+    <text class="m" x="626" y="216" font-size="12">年均增长倍数</text>
+    <text class="s" x="626" y="244" font-size="11.5">2010—2024 年趋势</text>
+  </g>
+
+  <g stroke-width="1.5" marker-end="url(#a)">
+    <line class="ln" x1="200" y1="154" x2="218" y2="154"/>
+    <line class="ln" x1="392" y1="154" x2="410" y2="154"/>
+    <line class="ln" x1="584" y1="154" x2="602" y2="154"/>
+  </g>
+
+  <text class="s" x="30" y="286" font-size="11.5">来源：国际能源署（IEA）2026；工业和信息化部；Epoch AI；</text>
+  <text class="s" x="30" y="304" font-size="11.5">微软、Alphabet、亚马逊、Meta 2026 年资本开支指引汇总（含非 AI 支出，口径不一，仅反映量级）</text>
+</svg>

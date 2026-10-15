@@ -9,8 +9,8 @@
 ## 功能特点
 
 - **页面嵌套浏览**：首页作为外壳，导航切换时把子页面内容载入中间区域，无需整页刷新；地址形如 `#/china`，支持前进后退与链接分享
-- **八个专题页**：数据洞察、发展里程碑、前沿技术详解、行业应用、中国 AI 专题、挑战与治理、未来展望、AI 入门与术语
-- **图文并茂**：13 幅原创 SVG 插图与数据图表（智能体循环、Token 预测、扩散模型、企业 AI 采用趋势等），自动适配深浅色主题
+- **九个专题页**：数据洞察、发展里程碑、前沿技术详解、算力与能源、行业应用、中国 AI 专题、挑战与治理、未来展望、AI 入门与术语
+- **图文并茂**：15 幅原创 SVG 插图与数据图表（智能体循环、Token 预测、扩散模型、企业 AI 采用趋势等），自动适配深浅色主题
 - **数据佐证**：投资、采用率、调用成本等关键数字均标注来源
 - **现代视觉设计**：中性深色主题，跟随系统自动切换浅色模式；粒子背景、滚动渐显与数字滚动动画
 - **响应式布局**：适配桌面、平板与手机，窄屏下提供折叠菜单
@@ -26,11 +26,12 @@
 |---|---|---|
 | `#/stats` | 数据洞察 | 2026 年上半年投资、用户、算力与人形机器人数据；2025 年度回顾、企业采用趋势、成本下降、中美对比 |
 | `#/timeline` | 发展里程碑 | 从 1950 年图灵测试到 2026 年智能体时代的五个阶段 |
-| `#/technology` | 前沿技术详解 | AI 技术栈；推理模型、智能体、多模态、开源、具身智能、AI for Science |
+| `#/technology` | 前沿技术详解 | 能力增长趋势（METR 任务时长）；AI 技术栈；推理模型、智能体、多模态、开源、具身智能、AI for Science |
+| `#/compute` | 算力与能源 | 全球 AI 支出与资本开支、数据中心用电、中国智能算力与 2030 目标、能源挑战与应对 |
 | `#/industries` | 行业应用 | 医疗、金融、制造、教育、交通等九大行业场景与企业落地方法 |
 | `#/china` | 中国 AI 专题 | 政策脉络、大模型生态、算力基础设施、人形机器人产业 |
 | `#/challenges` | 挑战与治理 | 可靠性、安全、就业、版权、深度伪造、能耗与全球治理进展 |
-| `#/future` | 未来展望 | 六大趋势判断，以及个人、企业与教育如何应对 |
+| `#/future` | 未来展望 | 量化目标与机构预测、六大趋势判断，以及个人、企业与教育如何应对 |
 | `#/basics` | AI 入门与术语 | 基础概念、大模型训练流程、30 个术语与常见误区 |
 
 ## 项目结构
@@ -45,6 +46,7 @@
 │   ├── stats.html
 │   ├── timeline.html
 │   ├── technology.html
+│   ├── compute.html
 │   ├── industries.html
 │   ├── china.html
 │   ├── challenges.html
@@ -89,6 +91,10 @@ python -m http.server 8000
 - [新华网：2026 世界人工智能大会报道](https://www.news.cn/tech/20260707/1e0c79e82bb94a97a1488ebe3984834d/c.html)
 - [中国新闻网：CNNIC《生成式人工智能应用发展报告（2026）》](https://www.chinanews.com.cn/cj/2026/09-29/10705475.shtml)
 - [EY：Global AI investment hits record $430 billion in H1 2026](https://www.ey.com/en_ie/newsroom/2026/08/global-ai-investment-hits-record-430bn-in-h1-2026)
+- [IEA：Key Questions on Energy and AI（2026）](https://www.iea.org/reports/key-questions-on-energy-and-ai/executive-summary)
+- [Gartner：2026 年全球 AI 支出预测](https://www.gartner.com/en/newsroom/press-releases/2026-05-19-gartner-forecasts-worldwide-ai-spending-to-grow-47-percent-in-2026)
+- [METR：AI 任务时间跨度研究](https://metr.org/notes/2026-01-22-time-horizon-limitations/)
+- [Epoch AI：前沿模型训练算力增长](https://epoch.ai/blog/training-compute-of-frontier-ai-models-grows-by-4-5x-per-year)
 - [Counterpoint：2026 年上半年全球人形机器人出货量](https://counterpointresearch.com/en/insights/global-humanoid-robot-shipments-soar-nearly-300-percent-yoy-in-h1-2026)
 - [国家发展改革委："十五五"规划纲要](https://www.ndrc.gov.cn/fggz/fzzlgh/gjfzgh/202603/U020260317369114704096.pdf)
 
