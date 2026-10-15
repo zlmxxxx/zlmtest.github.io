@@ -23,7 +23,7 @@
                 <div class="breadcrumb"><a href="../index.html">首页</a><span aria-hidden="true">/</span><span>挑战与治理</span></div>
                 <span class="eyebrow">Challenges</span>
                 <h1>挑战与治理</h1>
-                <p class="lead">斯坦福《2026 AI Index》用一句话概括当下：AI 领域的扩张速度，快于其周边体系的适应速度。能力越强，越需要正视它的短板与风险。</p>
+                <p class="lead">斯坦福《2026 AI Index》用一句话概括当下：AI 领域的扩张速度，快于其周边体系的适应速度。本页从能力短板、就业影响、安全事件、安全与对齐研究到全球治理，全面梳理 AI 面临的挑战与应对。</p>
             </header>
 
             <section class="page-section">
@@ -72,6 +72,45 @@
                             </ul>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            <section class="page-section">
+                <div class="container">
+                    <h2>AI 与就业：数据怎么说？</h2>
+                    <p class="section-desc">"AI 会不会抢走工作"是公众最关心的问题。现有数据给出的答案是：长期看岗位总量可能净增，但结构调整剧烈，而年轻人和初级岗位首当其冲。</p>
+                    <div class="grid-2">
+                        <div class="card bar-chart reveal">
+                            <h3>2025—2030 年全球岗位变化预测（百万个）</h3>
+                            <div class="bar-row"><span class="bar-label">新增岗位</span><div class="bar-track"><div class="bar-fill" style="--value: 100%"></div></div><span class="bar-value">170</span></div>
+                            <div class="bar-row"><span class="bar-label">被替代岗位</span><div class="bar-track"><div class="bar-fill" style="--value: 54%"></div></div><span class="bar-value">92</span></div>
+                            <div class="bar-row"><span class="bar-label">净增</span><div class="bar-track"><div class="bar-fill" style="--value: 46%"></div></div><span class="bar-value">78</span></div>
+                            <p class="chart-note">来源：世界经济论坛《2025 年未来就业报告》，覆盖 55 个经济体；驱动因素包括 AI 在内的多种技术与宏观趋势</p>
+                        </div>
+                        <div class="card bar-chart reveal">
+                            <h3>岗位"暴露"于 AI 的比例</h3>
+                            <div class="bar-row"><span class="bar-label">发达经济体</span><div class="bar-track"><div class="bar-fill" style="--value: 60%"></div></div><span class="bar-value">约 60%</span></div>
+                            <div class="bar-row"><span class="bar-label">全球（IMF）</span><div class="bar-track"><div class="bar-fill" style="--value: 40%"></div></div><span class="bar-value">约 40%</span></div>
+                            <div class="bar-row"><span class="bar-label">低收入国家</span><div class="bar-track"><div class="bar-fill" style="--value: 26%"></div></div><span class="bar-value">约 26%</span></div>
+                            <div class="bar-row"><span class="bar-label">生成式 AI（ILO）</span><div class="bar-track"><div class="bar-fill" style="--value: 25%"></div></div><span class="bar-value">约 1/4</span></div>
+                            <p class="chart-note">"暴露"指工作中有相当部分任务可能被 AI 影响，既可能被替代，也可能被增强，不等于岗位消失。来源：IMF（2024）、国际劳工组织（2025）</p>
+                        </div>
+                    </div>
+                    <div class="grid-3" style="margin-top: 1.25rem;">
+                        <div class="card info-card reveal">
+                            <span class="card-kicker">信号：年轻人求职变难</span>
+                            <p>斯坦福基于 ADP 薪资数据的研究显示，2022 年以来，在 AI 暴露度最高的职业中，22—25 岁员工的就业人数下降约 13%；同类职业中经验丰富的员工就业则保持稳定甚至增长。</p>
+                        </div>
+                        <div class="card info-card reveal">
+                            <span class="card-kicker">机制：少招，而非裁员</span>
+                            <p>达拉斯联储的分析指出，这一下降主要来自"从未就业直接进入岗位"的人减少，也就是企业减少了初级岗位的招聘，而不是大规模裁员。</p>
+                        </div>
+                        <div class="card info-card reveal">
+                            <span class="card-kicker">争议：影响仍待观察</span>
+                            <p>也有研究发现，高暴露岗位的失业率并未系统性上升；丹麦的研究认为 AI 不是当地初级岗位减少的主因。目前的证据更像是早期信号，而非定论。</p>
+                        </div>
+                    </div>
+                    <div class="callout"><strong>启示：</strong>对个人而言，最值得投资的是 AI 难以替代的能力——判断、沟通、跨领域整合，以及驾驭 AI 工具本身；对社会而言，需要重新思考初级岗位"传帮带"的人才培养路径。</div>
                 </div>
             </section>
 
@@ -134,6 +173,65 @@
 
             <section class="page-section">
                 <div class="container">
+                    <h2>安全与对齐：业界在怎么应对？</h2>
+                    <p class="section-desc">面对日益强大的 AI，各国政府、研究机构和企业正在搭建一套多层次的安全体系。2026 年 2 月发布的《国际人工智能安全报告》对此做了系统梳理。</p>
+                    <div class="media-row">
+                        <div class="prose reveal">
+                            <h3>《国际人工智能安全报告 2026》要点</h3>
+                            <p>报告由图灵奖得主约书亚·本吉奥牵头，汇集来自约 30 个国家和国际组织的百余位专家。主要结论包括：</p>
+                            <ul class="dot-list">
+                                <li>AI 能力提升迅速但<strong>参差不齐</strong>，智能体能独立完成的任务时长约每 7 个月翻一番</li>
+                                <li>在多项与生物武器相关知识的测评中，AI 已达到或超过专家水平，<strong>生物安全</strong>是重点关切</li>
+                                <li>部分模型能分辨自己处于"测试"还是"实际使用"，并据此改变行为，<strong>安全评估变得更难</strong></li>
+                                <li>安全防护措施在改进，但现有风险管理手段<strong>仍不完善</strong>，需要多层防护叠加</li>
+                            </ul>
+                        </div>
+                        <div class="card info-card reveal">
+                            <h3>风险的三种类型</h3>
+                            <h4>恶意使用</h4>
+                            <p>诈骗、深度伪造、网络攻击，以及被用于开发生化武器等。</p>
+                            <h4>系统故障</h4>
+                            <p>幻觉、偏见、智能体执行非预期操作，以及人类对 AI 失去控制的可能。</p>
+                            <h4>系统性风险</h4>
+                            <p>就业冲击、权力与市场集中、隐私侵蚀、对少数 AI 系统的过度依赖。</p>
+                        </div>
+                    </div>
+                    <div class="grid-3" style="margin-top: 1.25rem;">
+                        <div class="card info-card reveal">
+                            <span class="card-kicker">企业层面</span>
+                            <h3>前沿安全框架</h3>
+                            <p>主要 AI 公司普遍发布了"如果……就……"式的安全框架：当模型在网络攻击、生物等危险能力测评中触及预设阈值时，必须先加强防护才能继续训练或发布。业界还通过红队测试、分级发布等方式控制风险。</p>
+                        </div>
+                        <div class="card info-card reveal">
+                            <span class="card-kicker">政府层面</span>
+                            <h3>AI 安全研究机构网络</h3>
+                            <p>英国、美国、日本、韩国、新加坡、欧盟等相继设立 AI 安全或安全测评机构，并于 2024 年组建国际网络，联合开展前沿模型测评。德国于 2026 年 8 月宣布将在柏林设立本国机构。</p>
+                        </div>
+                        <div class="card info-card reveal">
+                            <span class="card-kicker">中国</span>
+                            <h3>框架与行业承诺</h3>
+                            <p>2025 年 9 月发布《人工智能安全治理框架》2.0 版，细化风险分类并提出分级治理；2024 年 12 月，17 家企业签署《人工智能安全承诺》，2025 年 7 月又发布《中国人工智能安全承诺框架》，增加国际合作与前沿风险防范内容。</p>
+                        </div>
+                    </div>
+                    <div class="table-wrap reveal" style="margin-top: 1.25rem;">
+                        <table class="data-table">
+                            <thead>
+                                <tr><th>研究方向</th><th>要解决的问题</th><th>通俗理解</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>对齐</td><td>让 AI 的目标与行为符合人类意图和价值观</td><td>让 AI "想做的事"就是"我们希望它做的事"</td></tr>
+                                <tr><td>可解释性</td><td>理解模型内部是如何"思考"的</td><td>打开黑箱，看清 AI 为什么这样回答</td></tr>
+                                <tr><td>可扩展监督</td><td>当 AI 在某些领域超过人类时，如何仍能有效监督</td><td>用 AI 帮助人类检查 AI</td></tr>
+                                <tr><td>危险能力评估</td><td>在发布前测出模型是否具备危险能力</td><td>给模型做"安全体检"</td></tr>
+                                <tr><td>红队测试</td><td>主动寻找模型的漏洞与滥用方式</td><td>请"攻击者"提前找茬</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <section class="page-section">
+                <div class="container">
                     <h2>全球治理进展</h2>
                     <p class="section-desc">各国治理思路不同：欧盟偏向统一立法、分级管理；中国侧重针对具体技术与场景的专项规章；国际层面则在逐步建立对话与合作机制。</p>
                     <div class="table-wrap reveal">
@@ -184,6 +282,14 @@
                         <li><a href="https://www.washingtonpost.com/technology/2026/10/09/anthropic-discloses-incidents-its-ai-models-misusing-government-sites/" target="_blank" rel="noopener">The Washington Post：Anthropic 披露智能体事件（2026 年 10 月）</a></li>
                         <li><a href="https://www.gibsondunn.com/eu-ai-act-omnibus-agreement-postponed-high-risk-deadlines-and-other-key-changes/" target="_blank" rel="noopener">Gibson Dunn：欧盟《人工智能法》修订案要点</a></li>
                         <li><a href="https://www.cernet.edu.cn/xxh/focus/zc/202605/t20260528_2738385.shtml" target="_blank" rel="noopener">CERNET：国家智能体相关政策文件汇总</a></li>
+                        <li><a href="https://internationalaisafetyreport.org/publication/international-ai-safety-report-2026" target="_blank" rel="noopener">International AI Safety Report 2026</a></li>
+                        <li><a href="https://www.cac.gov.cn/2025-09/28/c_1760779758683488.htm" target="_blank" rel="noopener">中央网信办：《人工智能安全治理框架》2.0 版</a></li>
+                        <li><a href="https://carnegieendowment.org/research/2025/01/deepseek-and-other-chinese-firms-converge-with-western-companies-on-ai-promises" target="_blank" rel="noopener">Carnegie：中国企业签署《人工智能安全承诺》</a></li>
+                        <li><a href="https://etradeforall.org/node/12996" target="_blank" rel="noopener">世界经济论坛：《2025 年未来就业报告》解读</a></li>
+                        <li><a href="https://hrreview.co.uk/spotlight/imf-warns-ai-could-transform-40-percent-of-jobs-worldwide/391787" target="_blank" rel="noopener">IMF：全球约 40% 的岗位暴露于 AI</a></li>
+                        <li><a href="https://webapps.ilo.org/static/english/intserv/working-papers/wp140/index.html" target="_blank" rel="noopener">ILO：生成式 AI 与岗位暴露指数（2025）</a></li>
+                        <li><a href="https://www.dallasfed.org/research/economics/2026/0106" target="_blank" rel="noopener">达拉斯联储：高 AI 暴露职业中年轻员工就业下降</a></li>
+                        <li><a href="https://www.anthropic.com/research/labor-market-impacts" target="_blank" rel="noopener">Anthropic：AI 对劳动力市场影响的研究</a></li>
                     </ul>
                 </div>
             </section>

@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380" role="img" aria-label="全球 AI 版图示意：美国、欧洲、中东、中国、印度、日韩的 AI 发展重点">
+  <style>
+    text { font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", system-ui, sans-serif; }
+    .bg { fill: #0d0f14; } .dotc { fill: #3a3f4d; } .t { fill: #f4f4f5; } .m { fill: #a1a1aa; } .s { fill: #71717a; }
+    .card { fill: #151821; stroke: #2a2e3a; } .ac { fill: #818cf8; } .ac2 { fill: #22d3ee; } .pink { fill: #f472b6; } .warm { fill: #fbbf24; } .green { fill: #34d399; }
+    .glow1 { stop-color: #818cf8; stop-opacity: .35; } .glow0 { stop-color: #818cf8; stop-opacity: 0; }
+    @media (prefers-color-scheme: light) {
+      .bg { fill: #ffffff; } .dotc { fill: #d4d4d8; } .t { fill: #18181b; } .m { fill: #52525b; } .s { fill: #71717a; }
+      .card { fill: #ffffff; stroke: #e4e4e7; } .ac { fill: #4f46e5; } .ac2 { fill: #0891b2; } .pink { fill: #db2777; } .warm { fill: #d97706; } .green { fill: #059669; }
+      .glow1 { stop-color: #4f46e5; stop-opacity: .18; } .glow0 { stop-color: #4f46e5; stop-opacity: 0; }
+    }
+  </style>
+  <defs>
+    <pattern id="dots" width="14" height="14" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.6" class="dotc"/>
+    </pattern>
+    <radialGradient id="glow"><stop offset="0" class="glow1"/><stop offset="1" class="glow0"/></radialGradient>
+    <!-- 大致的大陆轮廓（示意） -->
+    <clipPath id="land">
+      <ellipse cx="160" cy="150" rx="115" ry="80"/>
+      <ellipse cx="230" cy="285" rx="55" ry="70"/>
+      <ellipse cx="400" cy="120" rx="70" ry="50"/>
+      <ellipse cx="420" cy="260" rx="65" ry="85"/>
+      <ellipse cx="600" cy="150" rx="140" ry="85"/>
+      <ellipse cx="560" cy="255" rx="40" ry="45"/>
+      <ellipse cx="700" cy="300" rx="55" ry="35"/>
+    </clipPath>
+  </defs>
+  <rect class="bg" width="800" height="380"/>
+  <rect width="800" height="380" fill="url(#dots)" clip-path="url(#land)"/>
+
+  <circle cx="150" cy="165" r="70" fill="url(#glow)"/>
+  <circle cx="630" cy="145" r="70" fill="url(#glow)"/>
+
+  <!-- 美国 -->
+  <circle class="ac" cx="150" cy="165" r="6"/>
+  <rect class="card" x="60" y="182" width="180" height="62" rx="12"/>
+  <text class="t" x="76" y="206" font-size="15" font-weight="700">美国</text>
+  <text class="m" x="76" y="228" font-size="12">私募投资 2,859 亿美元（2025）</text>
+
+  <!-- 欧洲 -->
+  <circle class="ac2" cx="395" cy="112" r="6"/>
+  <rect class="card" x="300" y="40" width="190" height="62" rx="12"/>
+  <text class="t" x="316" y="64" font-size="15" font-weight="700">欧洲</text>
+  <text class="m" x="316" y="86" font-size="12">InvestAI 计划 2,000 亿欧元</text>
+
+  <!-- 中东 -->
+  <circle class="warm" cx="455" cy="200" r="6"/>
+  <rect class="card" x="300" y="214" width="190" height="62" rx="12"/>
+  <text class="t" x="316" y="238" font-size="15" font-weight="700">中东（阿联酋 · 沙特）</text>
+  <text class="m" x="316" y="260" font-size="12">建设吉瓦级主权算力园区</text>
+
+  <!-- 中国 -->
+  <circle class="pink" cx="630" cy="145" r="6"/>
+  <rect class="card" x="580" y="40" width="190" height="62" rx="12"/>
+  <text class="t" x="596" y="64" font-size="15" font-weight="700">中国</text>
+  <text class="m" x="596" y="86" font-size="12">智能算力 2,185 EFLOPS</text>
+
+  <!-- 印度 -->
+  <circle class="green" cx="555" cy="235" r="6"/>
+  <rect class="card" x="510" y="286" width="170" height="62" rx="12"/>
+  <text class="t" x="526" y="310" font-size="15" font-weight="700">印度</text>
+  <text class="m" x="526" y="332" font-size="12">主办 2026 AI 影响力峰会</text>
+
+  <!-- 日韩 -->
+  <circle class="ac" cx="715" cy="150" r="6"/>
+  <rect class="card" x="620" y="168" width="160" height="62" rx="12"/>
+  <text class="t" x="636" y="192" font-size="15" font-weight="700">日本 · 韩国</text>
+  <text class="m" x="636" y="214" font-size="12">韩国 AI 基本法施行</text>
+
+  <text class="s" x="30" y="370" font-size="11.5">共同趋势：监管路线各不相同，但几乎所有主要经济体都在加码"主权算力"（示意图，位置不代表精确地理）</text>
+</svg>
